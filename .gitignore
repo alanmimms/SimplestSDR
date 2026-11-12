@@ -4,3 +4,4 @@ SimplestSDR-backups/
 *~
 .*~
 production/
+*.lck
