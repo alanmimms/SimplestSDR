@@ -123,7 +123,7 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: 2.5e6
+    value: 5e6
   states:
     bus_sink: false
     bus_source: false
@@ -488,7 +488,7 @@ blocks:
     affinity: ''
     alias: ''
     comment: ''
-    maxoutbuf: '2048'
+    maxoutbuf: '0'
     minoutbuf: '0'
     vlen: '1'
   states:
@@ -668,7 +668,7 @@ blocks:
     center_freq: tuneOffset
     comment: ''
     decim: '4'
-    maxoutbuf: '2048'
+    maxoutbuf: '0'
     minoutbuf: '0'
     samp_rate: sampRate
     taps: firdes.low_pass(1.0, sampRate, chanBW, transBW)
