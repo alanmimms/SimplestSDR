@@ -44,7 +44,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1232, 24.0]
+    coordinate: [1448, 24.0]
     rotation: 0
     state: enabled
 - name: audioOutRate
@@ -56,7 +56,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [800, 24.0]
+    coordinate: [696, 24.0]
     rotation: 0
     state: enabled
 - name: chanBW
@@ -71,11 +71,23 @@ blocks:
     coordinate: [520, 24.0]
     rotation: 0
     state: enabled
+- name: ifBW
+  id: variable
+  parameters:
+    comment: ''
+    value: 80e3
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [592, 96.0]
+    rotation: 0
+    state: enabled
 - name: ifFreq
   id: variable
   parameters:
     comment: ''
-    value: loFreq-rfFreq
+    value: ifBW/2
   states:
     bus_sink: false
     bus_source: false
@@ -87,7 +99,7 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: rfFreq+20e3
+    value: vfo+ifBW/2
   states:
     bus_sink: false
     bus_source: false
@@ -111,7 +123,7 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: 5e6
+    value: 2.5e6
   states:
     bus_sink: false
     bus_source: false
@@ -158,14 +170,14 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1064, 24.0]
+    coordinate: [1280, 24.0]
     rotation: 0
     state: enabled
 - name: transBW
   id: variable
   parameters:
     comment: ''
-    value: '500'
+    value: '1500'
   states:
     bus_sink: false
     bus_source: false
@@ -177,35 +189,35 @@ blocks:
   id: variable_qtgui_range
   parameters:
     comment: ''
-    gui_hint: 0, 0, 1, 2
+    gui_hint: 1, 0, 1, 2
     label: IF Tune Offset (Hz)
     min_len: '200'
     orient: QtCore.Qt.Horizontal
     rangeType: float
-    start: ifFreq/4
-    step: '100'
-    stop: ifFreq*4
+    start: ifFreq-sampRate/2
+    step: '500'
+    stop: ifFreq+sampRate/2
     value: ifFreq
-    widget: slider
+    widget: eng_slider
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [904, 24.0]
+    coordinate: [1056, 24.0]
     rotation: 0
-    state: disabled
+    state: enabled
 - name: tuneOffset
   id: variable
   parameters:
     comment: ''
-    value: '20000'
+    value: ifFreq
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [824, 96.0]
+    coordinate: [816, 96.0]
     rotation: 0
-    state: enabled
+    state: disabled
 - name: txAudioRate
   id: variable
   parameters:
@@ -228,6 +240,27 @@ blocks:
     bus_source: false
     bus_structure: null
     coordinate: [288, 96.0]
+    rotation: 0
+    state: enabled
+- name: vfo
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: 0, 0, 1, 2
+    label: VFO
+    min_len: '200'
+    orient: QtCore.Qt.Horizontal
+    rangeType: float
+    start: rfFreq-0.5e6
+    step: '500'
+    stop: rfFreq+0.5e6
+    value: rfFreq
+    widget: eng_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [936, 24.0]
     rotation: 0
     state: enabled
 - name: analog_agc_xx_0
@@ -255,7 +288,7 @@ blocks:
   parameters:
     affinity: ''
     alias: ''
-    amp: '0.05'
+    amp: '0.1'
     comment: ''
     maxoutbuf: '0'
     minoutbuf: '0'
@@ -320,7 +353,7 @@ blocks:
   parameters:
     affinity: ''
     alias: ''
-    amp: '2'
+    amp: 4/math.pi
     comment: ''
     freq: loFreq
     maxoutbuf: '0'
@@ -330,7 +363,7 @@ blocks:
     samp_rate: txRFSampRate
     showports: 'False'
     type: float
-    waveform: analog.GR_SQR_WAVE
+    waveform: analog.GR_COS_WAVE
   states:
     bus_sink: false
     bus_source: false
@@ -343,17 +376,17 @@ blocks:
   parameters:
     affinity: ''
     alias: ''
-    amp: '2'
+    amp: 4/math.pi
     comment: ''
     freq: loFreq
     maxoutbuf: '0'
     minoutbuf: '0'
     offset: '-1'
-    phase: -3.14159/2
+    phase: -math.pi/2
     samp_rate: txRFSampRate
     showports: 'False'
     type: float
-    waveform: analog.GR_SQR_WAVE
+    waveform: analog.GR_COS_WAVE
   states:
     bus_sink: false
     bus_source: false
@@ -439,7 +472,7 @@ blocks:
     affinity: ''
     alias: ''
     comment: ''
-    maxoutbuf: '0'
+    maxoutbuf: '2048'
     minoutbuf: '0'
     vlen: '1'
   states:
@@ -455,7 +488,7 @@ blocks:
     affinity: ''
     alias: ''
     comment: ''
-    maxoutbuf: '0'
+    maxoutbuf: '2048'
     minoutbuf: '0'
     vlen: '1'
   states:
@@ -471,7 +504,7 @@ blocks:
     affinity: ''
     alias: ''
     comment: ''
-    maxoutbuf: '0'
+    maxoutbuf: '2048'
     minoutbuf: '0'
     n: int(txRFSampRate / sampRate)
     type: float
@@ -489,7 +522,7 @@ blocks:
     affinity: ''
     alias: ''
     comment: ''
-    maxoutbuf: '0'
+    maxoutbuf: '2048'
     minoutbuf: '0'
     n: int(txRFSampRate / sampRate)
     type: float
@@ -597,9 +630,9 @@ blocks:
     affinity: ''
     alias: ''
     comment: ''
-    length: '32'
+    length: '128'
     long_form: 'True'
-    maxoutbuf: '0'
+    maxoutbuf: '2048'
     minoutbuf: '0'
     type: cc
   states:
@@ -635,7 +668,7 @@ blocks:
     center_freq: tuneOffset
     comment: ''
     decim: '4'
-    maxoutbuf: '0'
+    maxoutbuf: '2048'
     minoutbuf: '0'
     samp_rate: sampRate
     taps: firdes.low_pass(1.0, sampRate, chanBW, transBW)
@@ -645,6 +678,19 @@ blocks:
     bus_source: false
     bus_structure: null
     coordinate: [1136, 624.0]
+    rotation: 0
+    state: enabled
+- name: import_0
+  id: import
+  parameters:
+    alias: ''
+    comment: ''
+    imports: import math
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1664, 96.0]
     rotation: 0
     state: enabled
 - name: qtgui_freq_sink_x_0
@@ -677,12 +723,12 @@ blocks:
     color8: '"dark red"'
     color9: '"dark green"'
     comment: ''
-    ctrlpanel: 'True'
-    fc: '0'
+    ctrlpanel: 'False'
+    fc: sampRate/2
     fftsize: '1024'
     freqhalf: 'True'
     grid: 'False'
-    gui_hint: 1, 0, 1, 2
+    gui_hint: 2, 0, 1, 2
     label: Relative Gain
     label1: ''
     label10: ''''''
@@ -707,7 +753,7 @@ blocks:
     tr_tag: '""'
     type: complex
     units: dB
-    update_time: '0.10'
+    update_time: 1/30
     width1: '1'
     width10: '1'
     width2: '1'
@@ -758,14 +804,14 @@ blocks:
     color8: '"dark red"'
     color9: '"dark green"'
     comment: ''
-    ctrlpanel: 'True'
+    ctrlpanel: 'False'
     fc: rfFreq
     fftsize: '1024'
     freqhalf: 'True'
     grid: 'False'
-    gui_hint: 2, 0, 1, 1
+    gui_hint: 3, 0, 1, 2
     label: Relative Gain
-    label1: ''
+    label1: foo
     label10: ''''''
     label2: ''''''
     label3: ''''''
@@ -783,12 +829,12 @@ blocks:
     norm_window: 'False'
     showports: 'False'
     tr_chan: '0'
-    tr_level: '0.9'
+    tr_level: '5000'
     tr_mode: qtgui.TRIG_MODE_AUTO
     tr_tag: '""'
     type: complex
     units: dB
-    update_time: '0.10'
+    update_time: 1/30
     width1: '1'
     width10: '1'
     width2: '1'
@@ -825,7 +871,7 @@ blocks:
     alpha8: '1.0'
     alpha9: '1.0'
     autoscale: 'False'
-    average: '0.2'
+    average: '0.1'
     axislabels: 'True'
     bw: sampRate
     color1: '"blue"'
@@ -839,12 +885,12 @@ blocks:
     color8: '"dark red"'
     color9: '"dark green"'
     comment: ''
-    ctrlpanel: 'True'
+    ctrlpanel: 'False'
     fc: '0'
     fftsize: '4096'
     freqhalf: 'True'
     grid: 'False'
-    gui_hint: 2, 1, 1, 1
+    gui_hint: 3, 1, 1, 1
     label: Relative Gain
     label1: ''
     label10: ''''''
@@ -889,7 +935,7 @@ blocks:
     bus_structure: null
     coordinate: [1120, 760.0]
     rotation: 0
-    state: enabled
+    state: disabled
 - name: qtgui_time_sink_x_0
   id: qtgui_time_sink_x
   parameters:
@@ -1016,7 +1062,7 @@ blocks:
     decim: int(txAudioRate)
     fbw: '0'
     interp: sampRate
-    maxoutbuf: '0'
+    maxoutbuf: '2048'
     minoutbuf: '0'
     taps: '[]'
     type: fff
@@ -1036,7 +1082,7 @@ blocks:
     decim: '1'
     fbw: '0'
     interp: int(txRFSampRate/sampRate)
-    maxoutbuf: '0'
+    maxoutbuf: '2048'
     minoutbuf: '0'
     taps: '[]'
     type: fff
@@ -1054,7 +1100,7 @@ blocks:
     alias: ''
     alpha: rcAlpha
     comment: ''
-    maxoutbuf: '0'
+    maxoutbuf: '2048'
     minoutbuf: '0'
     type: float
     vlen: '1'
@@ -1072,7 +1118,7 @@ blocks:
     alias: ''
     alpha: rcAlpha
     comment: ''
-    maxoutbuf: '0'
+    maxoutbuf: '2048'
     minoutbuf: '0'
     type: float
     vlen: '1'
@@ -1081,6 +1127,49 @@ blocks:
     bus_source: false
     bus_structure: null
     coordinate: [456, 664.0]
+    rotation: 0
+    state: enabled
+- name: snippet_0
+  id: snippet
+  parameters:
+    alias: ''
+    code: 'self.setStyleSheet("QLineEdit { font-size: 12pt; min-width: 90px; padding:
+      1px 3px; }")'
+    comment: ''
+    priority: '0'
+    section: main_after_init
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1616, 24.0]
+    rotation: 0
+    state: enabled
+- name: snippet_1
+  id: snippet
+  parameters:
+    alias: ''
+    code: "from gnuradio import qtgui\n\nhzPerMHz = 1000 * 1000\nunitSuffix = \"MHz\"\
+      \n\nfor rngWidget in self.findChildren(qtgui.RangeWidget):\n  editBox = rngWidget.findChild(Qt.QLineEdit)\n\
+      \  if editBox is None:\n    continue\n\n  origSetText = editBox.setText\n\n\
+      \  def makeFormatter(box, setTextFn):\n    def formatMHz(rawText):\n      cleanText\
+      \ = rawText.replace(unitSuffix, \"\").strip()\n      try:\n        hzVal = float(cleanText)\n\
+      \        mhzVal = hzVal / hzPerMHz\n        setTextFn(f\"{mhzVal:.3f}{unitSuffix}\"\
+      )\n      except ValueError:\n        setTextFn(rawText)\n    return formatMHz\n\
+      \n  def makeParser(box, rngObj):\n    def parseTypedKhz():\n      txt = box.text().strip()\n\
+      \      if txt.endswith(unitSuffix):\n        numPart = txt[:-len(unitSuffix)].strip()\n\
+      \        try:\n          hzVal = float(numPart) * hzPerKhz\n          rngObj.d_rng.set(hzVal)\n\
+      \        except ValueError:\n          pass\n    return parseTypedKhz\n\n  editBox.setText\
+      \ = makeFormatter(editBox, origSetText)\n  editBox.editingFinished.connect(makeParser(editBox,\
+      \ rngWidget))\n  editBox.setText(editBox.text())"
+    comment: ''
+    priority: '0'
+    section: main_after_init
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1608, 152.0]
     rotation: 0
     state: enabled
 - name: virtual_sink_0
