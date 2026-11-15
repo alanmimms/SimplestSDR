@@ -5,3 +5,5 @@ SimplestSDR-backups/
 .*~
 production/
 *.lck
+options_0.py
+.~*

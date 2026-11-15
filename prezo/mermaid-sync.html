@@ -1,0 +1,78 @@
+<style>
+  /* Highlighted Mermaid node styling */
+  .mermaid-diagram g.node.active-stage rect,
+  .mermaid-diagram g.node.active-stage polygon,
+  .mermaid-diagram g.node.active-stage circle {
+    fill: #2563eb !important;
+    stroke: #93c5fd !important;
+    stroke-width: 4px !important;
+    transition: fill 0.25s ease, stroke 0.25s ease;
+  }
+  .mermaid-diagram g.node.active-stage .nodeLabel {
+    color: #ffffff !important;
+    fill: #ffffff !important;
+    font-weight: bold;
+  }
+  .high-freq { color: #eeee11 }
+  .low-freq {color: #ee11ee }
+  .grey {color: #999999 }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Phase 1: Auto-assign Reveal.js fragment classes & indices before Reveal.initialize()
+    document.querySelectorAll('.r-stack').forEach(stack => {
+      const stages = Array.from(stack.querySelectorAll('[data-highlight-node]'));
+      if (stages.length < 2) return;
+
+      stages.forEach((stage, idx) => {
+        stage.classList.add('fragment');
+
+        if (idx === 0) {
+          stage.classList.add('fade-out');
+          stage.setAttribute('data-fragment-index', '1');
+        } else if (idx === stages.length - 1) {
+          stage.classList.add('fade-in');
+          stage.setAttribute('data-fragment-index', String(idx));
+        } else {
+          stage.classList.add('fade-in-then-out');
+          stage.setAttribute('data-fragment-index', String(idx));
+        }
+      });
+    });
+
+    // Phase 2: Sync active stage with Mermaid SVG node highlight
+    const syncDiagramHighlight = () => {
+      const currentSlide = Reveal.getCurrentSlide();
+      if (!currentSlide) return;
+
+      currentSlide.querySelectorAll('.mermaid-diagram g.node.active-stage')
+        .forEach(el => el.classList.remove('active-stage'));
+
+      const stages = Array.from(currentSlide.querySelectorAll('.r-stack [data-highlight-node]'));
+      if (stages.length === 0) return;
+
+      let activeStage = stages[0];
+      for (const stage of stages) {
+        if (stage.classList.contains('current-fragment') ||
+            (stage.classList.contains('visible') && !stage.classList.contains('fade-out'))) {
+          activeStage = stage;
+        }
+      }
+
+      const nodeId = activeStage.getAttribute('data-highlight-node');
+      if (!nodeId) return;
+
+      currentSlide.querySelectorAll('.mermaid-diagram g.node').forEach(nodeGroup => {
+        if (nodeGroup.id && nodeGroup.id.includes(`-${nodeId}-`)) {
+          nodeGroup.classList.add('active-stage');
+        }
+      });
+    };
+
+    Reveal.on('ready', syncDiagramHighlight);
+    Reveal.on('slidechanged', syncDiagramHighlight);
+    Reveal.on('fragmentshown', syncDiagramHighlight);
+    Reveal.on('fragmenthidden', syncDiagramHighlight);
+  });
+</script>
