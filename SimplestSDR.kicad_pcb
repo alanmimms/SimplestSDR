@@ -7574,7 +7574,7 @@
 			(justify left bottom)
 		)
 	)
-	(gr_text "Simplest SDR\nWB7NAB\nrev 01"
+	(gr_text "Simplest SDR\nWB7NAB\nrev 02"
 		(at 105.9 124.9 0)
 		(layer "F.SilkS")
 		(uuid "89604c7d-0341-4092-bf31-0d6b42825b76")
