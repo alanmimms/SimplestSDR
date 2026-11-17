@@ -779,167 +779,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Connector:Conn_Coaxial_Small"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "J"
-				(at 0.254 3.048 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "Conn_Coaxial_Small"
-				(at 0 -3.81 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "small coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "BNC SMA SMB SMC LEMO coaxial connector CINCH RCA MCX MMCX U.FL UMRF"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "*BNC* *SMA* *SMB* *SMC* *Cinch* *LEMO* *UMRF* *MCX* *U.FL*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "Conn_Coaxial_Small_0_1"
-				(polyline
-					(pts
-						(xy -2.54 0) (xy -0.508 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 0 0)
-					(radius 0.508)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "Conn_Coaxial_Small_1_1"
-				(arc
-					(start 1.3484 0.0039)
-					(mid 0.327 -1.308)
-					(end -1.1916 -0.6311)
-					(stroke
-						(width 0.3048)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start -1.1916 0.6311)
-					(mid 0.327 1.3081)
-					(end 1.3484 -0.0039)
-					(stroke
-						(width 0.3048)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin passive line
-					(at -2.54 0 0)
-					(length 1.27)
-					(name "In"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 0 180)
-					(length 1.27)
-					(name "Ext"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Connector_Audio:AudioJack2_Ground"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -3029,6 +2868,233 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Library:SMA_connector"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 0.254 3.048 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "SMA_connector"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Library:SMAJPHRATH1"
+				(at 0 -6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0.635 -6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "small coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
+				(at -0.635 -5.715 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "BNC SMA SMB SMC LEMO coaxial connector CINCH RCA MCX MMCX U.FL UMRF"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "*BNC* *SMA* *SMB* *SMC* *Cinch* *LEMO* *UMRF* *MCX* *U.FL*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "SMA_connector_0_1"
+				(polyline
+					(pts
+						(xy -2.54 0) (xy -0.508 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 0 0)
+					(radius 0.508)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 3.81) (xy 1.27 0.635)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "SMA_connector_1_1"
+				(arc
+					(start 1.3484 0.0039)
+					(mid 0.327 -1.308)
+					(end -1.1916 -0.6311)
+					(stroke
+						(width 0.3048)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -1.1916 0.6311)
+					(mid 0.327 1.3081)
+					(end 1.3484 -0.0039)
+					(stroke
+						(width 0.3048)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -2.54 0 0)
+					(length 1.27)
+					(name "In"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 3.81 180)
+					(length 1.27)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 2.54 180)
+					(length 1.27)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 1.27 180)
+					(length 1.27)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 0 180)
+					(length 1.27)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Simulation_SPICE:NJFET"
 			(pin_numbers
 				(hide yes)
@@ -3976,7 +4042,7 @@
 		)
 		(uuid "9a14e827-d159-419c-b330-088c50ef1831")
 	)
-	(text "Loop antenna\n4ft cross struts wound\nin diamond shape 1 turn\n#12AWG\n3.15MHz - 7.9MHz as shown"
+	(text "Loop antenna\n4ft cross struts wound\nin diamond shape 7 turns\n#22AWG closewound\ncovers AM broadcast band"
 		(exclude_from_sim no)
 		(at 49.276 139.7 0)
 		(effects
@@ -4096,6 +4162,12 @@
 		(uuid "2ea42142-99ba-43cb-8267-62075a3e06ce")
 	)
 	(junction
+		(at 81.28 40.64)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2f4819fb-fca6-4634-a671-70d57b51db7b")
+	)
+	(junction
 		(at 167.64 109.22)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4204,6 +4276,12 @@
 		(uuid "75277f4e-1936-4778-b4a6-950ea51f9305")
 	)
 	(junction
+		(at 25.4 40.64)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7588fdb8-3a72-4ce3-8e90-f186d3d2fb7f")
+	)
+	(junction
 		(at 53.34 54.61)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4240,6 +4318,18 @@
 		(uuid "88b63ad2-1940-4099-bb20-b6fd748ebf1a")
 	)
 	(junction
+		(at 80.01 40.64)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8aa81d6e-8869-426c-996f-cefff5864818")
+	)
+	(junction
+		(at 26.67 40.64)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8b9e39c4-4099-45a9-ae19-b9fd86548157")
+	)
+	(junction
 		(at 212.09 69.85)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4262,6 +4352,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "99496ad0-ed9b-4a1f-af17-3fcb05886c77")
+	)
+	(junction
+		(at 27.94 40.64)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "996bb04b-04c4-4c59-a967-5239cd809583")
 	)
 	(junction
 		(at 191.77 34.29)
@@ -4354,6 +4450,12 @@
 		(uuid "e6643ea5-9f68-479e-8474-dbaebe601081")
 	)
 	(junction
+		(at 82.55 40.64)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e6bc0789-9a9e-4a29-b77f-c79d65d36b42")
+	)
+	(junction
 		(at 76.2 163.83)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4392,6 +4494,16 @@
 	(no_connect
 		(at 60.96 35.56)
 		(uuid "3838c5bf-1d0a-4244-ab37-276552c30076")
+	)
+	(wire
+		(pts
+			(xy 24.13 40.64) (xy 25.4 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "000c3e76-e567-4983-b5d1-694c8a7a7f15")
 	)
 	(wire
 		(pts
@@ -4732,6 +4844,16 @@
 			(type default)
 		)
 		(uuid "1e1ea748-bab4-4a5d-b7c6-adee9f875529")
+	)
+	(wire
+		(pts
+			(xy 25.4 40.64) (xy 26.67 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1e32461a-c02e-4911-b423-0056317e0846")
 	)
 	(wire
 		(pts
@@ -5175,6 +5297,16 @@
 	)
 	(wire
 		(pts
+			(xy 80.01 40.64) (xy 81.28 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "57126738-d0c9-482f-9841-130f23e1c3c9")
+	)
+	(wire
+		(pts
 			(xy 60.96 73.66) (xy 66.04 73.66)
 		)
 		(stroke
@@ -5192,6 +5324,16 @@
 			(type default)
 		)
 		(uuid "5845b386-17ae-465a-8420-1f68bb834bb7")
+	)
+	(wire
+		(pts
+			(xy 82.55 40.64) (xy 83.82 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "59211cc3-c2ac-4370-949d-47b65427e98e")
 	)
 	(wire
 		(pts
@@ -5452,6 +5594,16 @@
 			(type default)
 		)
 		(uuid "73788f51-2df1-4e3c-bd4c-d7fe19a1f286")
+	)
+	(wire
+		(pts
+			(xy 81.28 40.64) (xy 82.55 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "73b043a2-cf88-4025-8cc1-b6ccbf21a446")
 	)
 	(wire
 		(pts
@@ -6655,6 +6807,16 @@
 	)
 	(wire
 		(pts
+			(xy 26.67 40.64) (xy 27.94 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "edd3f9dd-07a6-49b4-962b-bcc3a13adde0")
+	)
+	(wire
+		(pts
 			(xy 27.94 93.98) (xy 27.94 99.06)
 		)
 		(stroke
@@ -6921,7 +7083,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Connector_Audio:Jack_3.5mm_CUI_SJ1-3513N_Horizontal"
+		(property "Footprint" "Library:Jack_3.5mm_CUI_SJ1-3513N_Horizontal"
 			(at 251.46 59.69 0)
 			(effects
 				(font
@@ -7535,7 +7697,7 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
+		(on_board no)
 		(dnp no)
 		(uuid "1c764a25-1ee7-427e-8956-0de840d7bb66")
 		(property "Reference" "D1"
@@ -7689,7 +7851,7 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
+		(on_board no)
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1e2b86d8-01ca-4765-b741-f49fd069945a")
@@ -7983,7 +8145,7 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
+		(on_board no)
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2473080e-62b9-4d79-a995-5fd1f05dd4b7")
@@ -8005,7 +8167,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal"
 			(at 76.2 185.42 0)
 			(effects
 				(font
@@ -8189,7 +8351,7 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
+		(on_board no)
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2c089472-9a7b-4195-95b9-c850444380f4")
@@ -8211,7 +8373,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm"
 			(at 44.45 166.37 0)
 			(effects
 				(font
@@ -8737,7 +8899,7 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
+		(on_board no)
 		(dnp no)
 		(uuid "4238a4ef-d310-4520-befb-f36f03d77a70")
 		(property "Reference" "C23"
@@ -8758,7 +8920,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm"
 			(at 66.04 167.64 0)
 			(effects
 				(font
@@ -9616,7 +9778,7 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
+		(on_board no)
 		(dnp no)
 		(uuid "59bb1664-804f-4907-8a87-9b66660a9579")
 		(property "Reference" "C19"
@@ -10157,7 +10319,7 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
+		(on_board no)
 		(dnp no)
 		(uuid "77569a14-f7ec-42a5-92f3-0a9d1ca1b3ac")
 		(property "Reference" "C24"
@@ -10178,7 +10340,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm"
 			(at 68.58 180.34 0)
 			(effects
 				(font
@@ -10474,7 +10636,7 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
+		(on_board no)
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8034534c-140e-4345-a759-d60162c14820")
@@ -10496,7 +10658,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal"
 			(at 95.25 189.23 0)
 			(effects
 				(font
@@ -11168,7 +11330,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:Conn_Coaxial_Small")
+		(lib_id "Library:SMA_connector")
 		(at 27.94 38.1 90)
 		(mirror x)
 		(unit 1)
@@ -11195,7 +11357,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_Coaxial:SMA_Amphenol_901-143_Horizontal"
+		(property "Footprint" "Library:SMAJPHRATH1"
 			(at 27.94 38.1 0)
 			(effects
 				(font
@@ -11205,7 +11367,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 27.94 38.1 0)
+			(at 34.29 38.735 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11214,7 +11376,7 @@
 			)
 		)
 		(property "Description" "small coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
-			(at 27.94 38.1 0)
+			(at 33.655 37.465 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11227,6 +11389,15 @@
 		)
 		(pin "1"
 			(uuid "4810da6c-ff54-44e1-8cb8-d3b3c3e4571a")
+		)
+		(pin "3"
+			(uuid "9249c68c-ed2c-4705-bf3a-b0639c893874")
+		)
+		(pin "4"
+			(uuid "cc6d37f9-c3f2-4a65-95f2-1613f4b76d68")
+		)
+		(pin "5"
+			(uuid "6c60bb1c-c902-4069-a5a9-a8c60e192efb")
 		)
 		(instances
 			(project "SimplestSDR"
@@ -11413,7 +11584,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:Conn_Coaxial_Small")
+		(lib_id "Library:SMA_connector")
 		(at 80.01 38.1 270)
 		(unit 1)
 		(exclude_from_sim no)
@@ -11439,7 +11610,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_Coaxial:SMA_Amphenol_901-143_Horizontal"
+		(property "Footprint" "Library:SMAJPHRATH1"
 			(at 80.01 38.1 0)
 			(effects
 				(font
@@ -11449,7 +11620,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 80.01 38.1 0)
+			(at 73.66 38.735 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11458,7 +11629,7 @@
 			)
 		)
 		(property "Description" "small coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
-			(at 80.01 38.1 0)
+			(at 74.295 37.465 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11471,6 +11642,15 @@
 		)
 		(pin "1"
 			(uuid "b0fc2aaf-28b4-41f6-b4b7-79d303265edf")
+		)
+		(pin "4"
+			(uuid "03143f15-1197-4146-91ac-8ea89a7e0372")
+		)
+		(pin "3"
+			(uuid "de2fe6a0-1c29-4b99-a393-33c6b78383e7")
+		)
+		(pin "5"
+			(uuid "1118240c-2066-4414-af8b-87d291f3fcfa")
 		)
 		(instances
 			(project "SimplestSDR"
@@ -11487,7 +11667,7 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
+		(on_board no)
 		(dnp no)
 		(uuid "98add915-0064-4e9f-8f30-1ba4a5256604")
 		(property "Reference" "J5"
@@ -12403,7 +12583,7 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
+		(on_board no)
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b13c2557-ecbe-4c7a-98dd-65525b3874df")
@@ -12425,7 +12605,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal"
 			(at 44.45 179.07 0)
 			(effects
 				(font
@@ -12540,7 +12720,7 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
+		(on_board no)
 		(dnp no)
 		(uuid "b780f7da-85be-4fed-99ac-4e89a813a0dc")
 		(property "Reference" "C21"
@@ -12561,7 +12741,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm"
 			(at 105.41 167.64 0)
 			(effects
 				(font
@@ -12609,7 +12789,7 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
+		(on_board no)
 		(dnp no)
 		(uuid "b9d1c096-41a8-458a-a84f-c1de972b71f5")
 		(property "Reference" "D2"
@@ -12896,7 +13076,7 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
+		(on_board no)
 		(dnp no)
 		(uuid "c428a541-a56e-482f-9306-8bd445cf7fc3")
 		(property "Reference" "C22"
@@ -12915,7 +13095,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm"
 			(at 113.03 185.42 0)
 			(effects
 				(font
@@ -13565,7 +13745,7 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
+		(on_board no)
 		(dnp no)
 		(uuid "cf6cc1c5-02ea-4331-a4d4-d013fe9b4dec")
 		(property "Reference" "R22"
@@ -13584,7 +13764,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal"
 			(at 105.41 185.42 0)
 			(effects
 				(font
@@ -13632,7 +13812,7 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
+		(on_board no)
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d0c00971-0062-46b4-9bf8-e09bf46b4954")
@@ -13654,7 +13834,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal"
 			(at 76.2 168.91 0)
 			(effects
 				(font
@@ -13835,7 +14015,7 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
+		(on_board no)
 		(dnp no)
 		(uuid "d68dc5a4-efc1-4bd5-a1a3-7fb7b0be0561")
 		(property "Reference" "R18"
@@ -13854,7 +14034,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal"
 			(at 82.55 179.07 0)
 			(effects
 				(font
@@ -13902,7 +14082,7 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
+		(on_board no)
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e0d7949d-be3e-4acf-9a22-2152205888ba")
@@ -13924,7 +14104,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
 			(at 58.42 171.45 0)
 			(effects
 				(font
@@ -14343,7 +14523,7 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
+		(on_board no)
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f526553d-05a1-4dad-a223-04e3830584fd")
@@ -14577,7 +14757,7 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
+		(on_board no)
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "fecbc7f7-0e30-435d-923e-38552c3ef8b3")
@@ -14599,7 +14779,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal"
 			(at 55.88 184.15 0)
 			(effects
 				(font

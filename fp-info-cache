@@ -1,4 +1,4 @@
-27098036112544942
+27101625872776970
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -71393,12 +71393,26 @@ CD74HC4052E
 16
 16
 Library
+Jack_3.5mm_CUI_SJ1-3513N_Horizontal
+TRS 3.5mm, horizontal, through-hole, https://www.cuidevices.com/product/resource/sj1-351xn.pdf
+TRS audio jack stereo horizontal
+0
+3
+3
+Library
 LM358AN
 
 LM358AN/NOPB 
 0
 8
 8
+Library
+SMAJPHRATH1
+SMA-J-P-H-RA-TH1-1
+Connector
+0
+5
+5
 Module
 A20_OLINUXINO_LIME2
 A20 Olinuxino LIME2, 1.2GHz, 512-1024MB RAM, Micro-SD, NAND or eMMC, 1000Mbit Ethernet
